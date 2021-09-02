@@ -1,0 +1,158 @@
+/* Common */
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+div, section, header, footer, p, h1, h2 {
+	box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul,ol,li {
+  list-style:none;
+}
+.global-width {
+  position: absolute;
+  max-width: 1500px;
+  left: 0px;
+  right: 0;
+	margin: 0 auto;
+  padding: 20px;
+}
+.sub_menu_li {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 255, 0);
+}
+.sub_menu_txt {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+/* header */
+header {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color:rgb(127, 130, 135);
+  z-index: 1;
+}
+header > a {
+  display: block;
+  width: 160px;
+  padding: 0 50px;
+}
+header .logo {
+  width: 120px;
+  height: 50px;
+}
+header .top_menu {
+  position: relative;
+  top: -60px;
+  left: 300px;
+}
+header .top_menu > ul {
+  display: flex;
+  padding-left: 0;
+}
+header .top_menu > ul > li {
+  padding: 0 20px;
+}
+header .top_menu > ul > li:first-child {
+  padding-left: 0;
+}
+header .top_menu > ul > li a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Section */
+section {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: #000;
+  overflow-x: hidden;
+}
+section input[id="togglebtn"]  {
+  display: none;
+}
+section input[id="togglebtn"] + label {
+  display: block;
+  width: 25px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 300px;
+  transform: translateY(-50%);
+  background-color: rgb(77, 78, 80);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+  z-index: 1;
+}
+section input[id="togglebtn"] + label span {
+  position: absolute;
+  font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+}
+section input[id="togglebtn"]:checked + label {
+  left: 0px;
+}
+section input[id="togglebtn"]:checked + label span {
+  transform: rotate(180deg) translateY(50%);
+}
+section .side_menu {
+  position: fixed;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(77, 78, 80);
+  transition: all 0.5s;
+}
+section .side_menu > ul > li {
+  padding: 5px 0px;
+}
+section input[id="togglebtn"]:checked + label + .side_menu {
+  left: -300px;
+}
+
+/* Section of Contents */
+section .homewrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: 300px;
+  transition: all 0.5s;
+}
+section input[id="togglebtn"]:checked + label + .side_menu + .homewrap {
+  margin-left: 0;
+}
+section .homewrap h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+}
+section .homewrap h2 {
+  font-size: 38px;
+  font-weight: 500;
+  color: #fff;
+}
+section .homewrap p {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(4, 158, 107);
+}
